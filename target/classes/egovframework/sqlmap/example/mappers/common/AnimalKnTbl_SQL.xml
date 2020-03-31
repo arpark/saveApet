@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.init.service.impl.InitSavaApetMapper">
+
+	<select id="selectTest">
+				 select 1 from dual
+	</select>
+	
+	<insert id="insertAnimalknList" parameterType="Map">
+
+			INSERT INTO ANIMALKN
+				( 	DESERTIONNO
+					,FILENAME
+					,HAPPENDT
+					,HAPPENPLACE
+					,KINDCD
+					,NOTICENO
+					,NOTICESDT
+					,POPFILE
+					,PROCESSSTATE
+					,PROCESSSTATECD
+					,SEXCD
+					,SPECIALMARK
+					,UPKINDCD
+					,UPRCD
+					,ORGCD
+					,CAREREGNO
+					,LATITUDE
+					,LONGITUDE
+					,CAREADDR
+					,CARENM
+					,CARETEL
+					,COLORCD
+					,NEUTERYN
+					,WEIGHT
+					,AGE
+
+ 				)
+			VALUES ( 
+					#{desertionNo}
+					,#{filename}
+					,#{happenDt}
+					,#{happenPlace}
+					,#{kindCd}
+					,#{noticeNo}
+					,#{noticeSdt}
+					,#{popfile}
+					,#{processState}
+					,#{processStateCd}
+					,#{sexCd}
+					,#{specialMark}
+					,#{upkindCd}
+					,#{uprCd}
+					,#{orgCd}
+					,#{careRegNo}
+					,#{latitude}
+					,#{longitude}
+					,#{careAddr}
+					,#{careNm}
+					,#{careTel}
+					,#{colorCd}
+					,#{neuterYn}
+					,#{weight}
+					,#{age}
+					)
+
+	</insert>
+	
+	
+	<delete id="deleteAnimalknTbl" >
+		TRUNCATE ANIMALKN
+	</delete>
+	
+</mapper>

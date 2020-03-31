@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.init.service.impl.InitSavaApetMapper">
+
+	<insert id="insertSidoCode" parameterType="map">
+
+			INSERT INTO CODETBL
+				( 	CODE
+					,CODE_DESC
+					,GROUP_CD
+ 				)
+			VALUES ( 
+					#{orgCd}
+					,#{orgdownNm}
+					,0
+					)
+
+	</insert>
+	
+	<insert id="insertSigunguCode" parameterType="map">
+
+			INSERT INTO CODETBL
+				( 	CODE
+					,CODE_DESC
+					,GROUP_CD
+					,FIRST_CODE
+ 				)
+			VALUES ( 
+					#{orgCd}
+					,#{orgdownNm}
+					,1
+					,#{uprCd}
+					)
+
+	</insert>
+
+	<insert id="insertShelterCode" parameterType="map">
+
+			INSERT INTO CODETBL
+				( 	CODE
+					,CODE_DESC
+					,GROUP_CD
+					,FIRST_CODE
+					,SECOND_CODE
+ 				)
+			VALUES ( 
+					#{careRegNo}
+					,#{careNm}
+					,2
+					,#{uprCd}
+					,#{orgCd}
+					)
+
+	</insert>
+	
+	<select id="selectCodeTbl" parameterType="string" resultType="map">
+		SELECT * FROM CODETBL WHERE GROUP_CD = #{code}
+	</select>
+	
+	<delete id="deleteCodeTbl" >
+		TRUNCATE ANIMALKN
+	</delete>
+	
+</mapper>
